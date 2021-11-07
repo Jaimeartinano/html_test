@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        border: orange;
+        border-radius: 90px;
+        border-color: red;
+        color:blueviolet;
+        font-style:italic;
+        background-color: orangered;
+        opacity:.5;
+        align-self: center;
+        width:200px;
+        text-align: center;
+    }
+    #container_1{
+        background-color: blueviolet;
+    }
+    section{
+        text-align: center;
+    }
+    li{
+        color:blue;
+        text-align: center;
+        font-size: large;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+    #mainPoint{
+        background-color: cadetblue;
+    }
+    #floating_test{
+        background-color:blue;
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+        border: 3 px black;
+        float:left;
+    }
+    #float_container{
+        background:orange;
+        width:auto;
+        margin:20px;
+    }
+    #clear_floating_test{
+        clear:left 
+    }
+    #clear_float{
+        clear:left
+    }
+</style>
+<body>
+    Hello World!
+    <div>Hello</div>
+    <table>
+        <th>
+            <td>Hello</td>
+        </th>
+        <tr>
+            <td>
+                <a href="./testing/" title ="Go back">Go back</a>
+                <!--./testing/ sends you to the path in your directory-->
+            </td>
+        </tr>
+    </table>
+    <div id="float_container">
+        <p id="floating_test"></p>
+        <p id="clear_floating_test"></p>
+        <p id="floating_test"></p>
+        <section id="clear_float">This is just  some random regular  content</section>
+    </div>
+    <a href="./testing/" title ="Go back"> 
+        <div>Hello</div>
+    </a>
+    <a href="./testing/" title ="Go back" target="_blank">
+        <div backgounr-color="black">Hello world</div>
+        <!--_blank opens a new tab when link is clicked-->
+    </a>
+    <ul>
+        <li><a href="#section1">go to section1</a></li>--msamsasl
+        <li><a href="#section2">go to section2</a></li>
+        <li><a href="#section3">go to section3</a></li>
+        <li><a href="#section4">go to section4</a></li>
+        <li><a href="#section5">go to section5</a></li>
+        <!--href="#Alo" It searches id="Alo" and redirects you to this section-->
+    </ul>
+    <section id="container_1">
+        <h1>THIS IS THE SECTION 1</h1>
+        <div>Lorem Ipsum is simply <span id="mainPoint">Hello</span> dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </div>
+    </section>
+    <!--
+        1. <img src="Link to image"></img>
+        2. Esto es un element selector
+        div{
+            border: orange;
+            border-radius: 90px;
+            border-color: red;
+            color:blueviolet;
+            background-color: orangered;
+            width: 200px;
+            text-align: center;
+        }
+        3. Esto es un class selector. Se aplica estos estilos a las clases
+        .blue{
+            border: orange;
+            border-radius: 90px;
+            border-color: red;
+            color:blueviolet;
+            background-color: orangered;
+            width: 200px;
+            text-align: center;
+        }
+        4. Esto es un id selector. Se aplica a los elementos con ese id
+        #name{
+            border: orange;
+            border-radius: 90px;
+            border-color: red;
+            color:blueviolet;
+            background-color: orangered;
+            width: 200px;
+            text-align: center;
+        }
+        5. Group selectors con comas. Element selector y class selector a la vez.
+        div, .blue{
+            border: orange;
+            border-radius: 90px;
+            border-color: red;
+            color:blueviolet;
+            background-color: orangered;
+            width: 200px;
+            text-align: center;
+        }  
+        6. Element with class selector. Will take every p element within big class   
+        <p class="big">It will get blue</p>
+        <div class="big"> it won't be affected <div> 
+        p.big{
+            color:blue; 
+        }
+        7. Child selector. You read from right to left. 
+        Every p element that is direct child to article element will be affected.
+        article > p{
+            color:orange;
+        }
+        8. Descendant selector.
+        Every p element that is inside (at any level) of article.
+        article p{
+            color:blue;
+        }
+        9. Other variations
+        article #activity
+        article .activity
+        #activity .class
+        .class article
+        #id #id
+        #id > .class
+        ..highlighy.mainpoint all element with class highlight as well as with class mainpont
+        10. Pseudo-Class Selector (:link :visited :hover :active :nth-child(...)).
+        It is applying the style to link and visited (no difference between each).
+        11. Display block will display the whole element at maximum
+        12. text-decoration: none will avoid the predefined style
+        selector :pseudo-class{}
+        a:link, a:visited{
+            text-decoration:none;
+            background-color:green;
+            border: 1px solid blue;
+            color:black;
+            display: block;
+        }
+        13. Specifity 1.style 2.id 3.class  4.element.
+        !important will  override other styles no matter what.
+                section tr:nth-child(odd){
+            background-color: blue;
+            display:block;
+            color:whitesmoke !important;
+            cursor:pointer;
+        }
+        14. The STAR * Selector. It considers every element there is. 
+        Not inherit but select every property.
+        *{
+            box-sizing:border-box;
+            margin:0px; As by default browsers apply a small border
+        }
+        15. box-sizing: border-box | box-sizing:content-box
+        box-sizing: border-box: Content + Padding + Border
+        box-sizing:content-box: Content
+        #box{
+            background-color: cadetblue;
+            margin: 5px;
+            border: 5px;
+            border-color:darkblue;
+            padding: 5px 10px 5 px 10px;
+            margin: 20px;
+            width: 300 px;
+            box-sizing: border-box;
+        }
+        16. Margins between two elements. Depending on the position it changes..
+        If A is margin=50 and B margin=30. 
+        If A is left and B is right, margin between both will be 80px.
+        If A is top and B is bottom,  margin will be instead 50. The bigger wins.
+        17. overflow property is visible by default.
+        In order to hide it: overflow:hidden;
+        In order to be able to scroll down overflow: auto;
+        18. Márgenes regulares. Como vimos previamente, los margin de los elementos
+        cuando chocan de forma vertical, solo se coge el que tiene un mayor margen.
+        Esto no ocurre en los márgenes de forma horizontal.
+        No obstante, cuando el element es float, entonces todos los márgenes never collapse.
+        De hecho, se sale del regular document flow y colapsa en horizontal.
+        p{
+            float:left;
+        }
+        Por lo que para que no colapse, se debe decir al elemento que lo contenga que
+        que actualice el document flow teniéndolo en cuenta. 
+        Cuando los elementos float no caben en una línea saltan a a la siguiente.
+        Para ello utilizamos la propiedad clear.
+        Con esto, lo que dice es que no está permitido que nada flote a su izquierda.
+        clear:left (para evitar float a la izquierda)
+        clear:right (para evitar float a la derecha)
+        clear:both (para ambos)
+        section {
+            clear:left;
+        }
+        19. Static is te default position for all elements except html
+        20. The position of the whole document is set to static as default.
+        Allow you to specifiy offsets to different part of the doc or region.
+        When position: relative -> element is positioned relative to its position in normal document flow. 
+        Positioning offset properties are top bottom right and left.
+        Old position of the Element IS NOT taken out of the normal document flow. Other elements respect it even if it is empty.
+        ->Even if moved,  its original spot is preserved.
+        p  {
+            position: relative;
+            bottom: 50px;
+            right:10px;
+        }
+        21. when position: absolute:
+        It jumps out of the document flow. Looks for parent elements with position: relative/absolute.
+        Old position of the element IS taken out of the normal document flow.
+        22. @media (min-width:1200px) and (max-width: 120px){
+            p{}
+            #ids{
+
+            }
+        }   
+         @media (min-width:1200px), (max-width: 120px) -> the "," is like  an OR
+
+         23. <meta name="viewport" content="width=device-width, initial-scale=1">
+         Browsers by default try to zoom-put in the webpages when you are in the phone.
+         The reasonn is by default they don't connsider it is a responsive website.
+         To change it you have to copy past the code above in the head od the document.
+    -->
+</body>
+</html>
